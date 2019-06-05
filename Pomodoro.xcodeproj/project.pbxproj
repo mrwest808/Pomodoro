@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E326F8BC229C067300CE6602 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E326F8BB229C067300CE6602 /* AppDelegate.swift */; };
-		E326F8BE229C067300CE6602 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E326F8BD229C067300CE6602 /* ViewController.swift */; };
 		E326F8C0229C067500CE6602 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E326F8BF229C067500CE6602 /* Assets.xcassets */; };
 		E326F8C3229C067500CE6602 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E326F8C1229C067500CE6602 /* Main.storyboard */; };
 		E326F8CF229C067500CE6602 /* PomodoroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E326F8CE229C067500CE6602 /* PomodoroTests.swift */; };
@@ -27,7 +26,6 @@
 /* Begin PBXFileReference section */
 		E326F8B8229C067300CE6602 /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E326F8BB229C067300CE6602 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E326F8BD229C067300CE6602 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E326F8BF229C067500CE6602 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E326F8C2229C067500CE6602 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E326F8C4229C067500CE6602 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,7 +75,6 @@
 			isa = PBXGroup;
 			children = (
 				E326F8BB229C067300CE6602 /* AppDelegate.swift */,
-				E326F8BD229C067300CE6602 /* ViewController.swift */,
 				E326F8BF229C067500CE6602 /* Assets.xcassets */,
 				E326F8C1229C067500CE6602 /* Main.storyboard */,
 				E326F8C4229C067500CE6602 /* Info.plist */,
@@ -195,7 +192,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E326F8BE229C067300CE6602 /* ViewController.swift in Sources */,
 				E326F8BC229C067300CE6602 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,7 +348,7 @@
 				CODE_SIGN_ENTITLEMENTS = Pomodoro/Pomodoro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = TNBLA3QJD3;
+				DEVELOPMENT_TEAM = RHYX993QJF;
 				INFOPLIST_FILE = Pomodoro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -371,7 +367,7 @@
 				CODE_SIGN_ENTITLEMENTS = Pomodoro/Pomodoro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = TNBLA3QJD3;
+				DEVELOPMENT_TEAM = RHYX993QJF;
 				INFOPLIST_FILE = Pomodoro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
