@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import UserNotifications
 
 let TIMER_DURATION_KEY = "timerDuration"
 let DEFAULT_TIMER_DURATION = 25
@@ -97,6 +98,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // 23.5 -> 23m
     // ...
     var minutesLeft = Double(timerDurationInMinutes)
+    var didAlertAboutAlmostOver = false
 
     timer = Timer.scheduledTimer(withTimeInterval: 30.0, repeats: true, block: { _ in
       minutesLeft -= 0.5
@@ -109,6 +111,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       if minutesLeft <= 0.5 {
         self.setMenuButtonTitle("< 1m")
         return
+      }
+
+      if !didAlertAboutAlmostOver && minutesLeft <= 2.0 {
+        self.triggerAlmostOverNotification()
+        didAlertAboutAlmostOver = true
       }
 
       self.setMenuButtonTitle("\(Int(minutesLeft.rounded(.down)))m")
@@ -165,6 +172,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     if let button = statusItem.button {
       button.title = title
     }
+  }
+
+  func triggerAlmostOverNotification() {
+    let notification = NSUserNotification()
+
+    notification.identifier = UUID().uuidString
+    notification.title = "Time's almost up!"
+    notification.informativeText = "2 minutes left, start wrapping up..."
+
+    NSUserNotificationCenter.default.deliver(notification)
   }
   
   func didChangeTimerState(_ newState: TimerState) {
