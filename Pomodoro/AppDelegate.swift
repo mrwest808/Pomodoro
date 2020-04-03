@@ -6,6 +6,7 @@
 //  Copyright © 2019 Johan West. All rights reserved.
 //
 
+import Foundation
 import Cocoa
 import UserNotifications
 
@@ -13,8 +14,8 @@ let TIMER_DURATION_KEY = "timerDuration"
 let DEFAULT_TIMER_DURATION = 25
 
 enum TimerState {
-  case Idle
-  case Running
+  case idle
+  case running
 }
 
 struct MenuItems {
@@ -29,10 +30,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
   let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
+  var notificationPermissionGranted = false
   var menuItems: MenuItems!
   var timer: Timer?
   var timerDurationInMinutes: Int = 25
-  var timerState: TimerState = .Idle {
+  var timerState: TimerState = .idle {
     didSet {
       didChangeTimerState(timerState)
     }
@@ -46,6 +48,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     setMenuButtonTitle("P")
     buildMenu()
+
+    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, _ in
+      if granted {
+        self.notificationPermissionGranted = true
+      }
+    }
   }
   
   func applicationWillTerminate(_ aNotification: Notification) {
@@ -88,7 +96,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   }
   
   func startTimer() {
-    timerState = .Running
+    timerState = .running
     setMenuButtonTitle("\(timerDurationInMinutes)m")
 
     // Tick every 30 seconds flooring the time left, which should resolve in:
@@ -125,7 +133,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   func stopTimer(manuallyStopped: Bool) {
     self.timer?.invalidate()
     self.timer = nil
-    self.timerState = .Idle
+    self.timerState = .idle
     self.setMenuButtonTitle("P")
 
     if !manuallyStopped {
@@ -140,8 +148,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     alert.alertStyle = .informational
     alert.addButton(withTitle: "OK")
     alert.window.initialFirstResponder = alert.buttons.first
-    
+
+    let frontmostApp = NSWorkspace.shared.frontmostApplication
+    NSRunningApplication.current.activate(options: .activateIgnoringOtherApps)
+
     alert.runModal()
+    frontmostApp?.activate()
   }
   
   func showChangeDurationAlert() {
@@ -156,7 +168,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     alert.addButton(withTitle: "Cancel")
     alert.accessoryView = inputView
     alert.window.initialFirstResponder = inputView
-    
+
+    let frontmostApp = NSWorkspace.shared.frontmostApplication
+    NSRunningApplication.current.activate(options: .activateIgnoringOtherApps)
+
     if alert.runModal() == .alertFirstButtonReturn {
       let duration = Int(inputView.stringValue) ?? timerDurationInMinutes
       
@@ -166,6 +181,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menuItems.start.title = "Start (\(duration) min)"
       }
     }
+
+    frontmostApp?.activate()
   }
   
   func setMenuButtonTitle(_ title: String) {
@@ -175,17 +192,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   }
 
   func triggerAlmostOverNotification() {
-    let notification = NSUserNotification()
+    if !notificationPermissionGranted {
+      return
+    }
 
-    notification.identifier = UUID().uuidString
-    notification.title = "Time's almost up!"
-    notification.informativeText = "2 minutes left, start wrapping up..."
+    let content = UNMutableNotificationContent()
+    content.title = "Time's almost up!"
+    content.body = "2 minutes left, start wrapping up..."
+    content.sound = UNNotificationSound.default
 
-    NSUserNotificationCenter.default.deliver(notification)
+    let request = UNNotificationRequest(
+      identifier: UUID().uuidString,
+      content: content,
+      trigger: nil
+    )
+
+    UNUserNotificationCenter.current().add(request)
   }
   
   func didChangeTimerState(_ newState: TimerState) {
-    if newState == .Running {
+    if newState == .running {
       menuItems.start.isEnabled = false
       menuItems.start.isHidden = true
       menuItems.stop.isEnabled = true
@@ -194,7 +220,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       return
     }
     
-    if newState == .Idle {
+    if newState == .idle {
       menuItems.start.isEnabled = true
       menuItems.start.isHidden = false
       menuItems.stop.isEnabled = false
