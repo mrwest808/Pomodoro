@@ -18,16 +18,15 @@ class Application: NSObject {
   
   var duration = 25
   var appState: AppState = .idle {
-    didSet(newAppState) {
-      if newAppState == .idle {
-        timer.run(forDuration: duration, block: handleTick(minutesLeft:))
-        menu.running(duration)
-      }
-
-      if newAppState == .running {
+    didSet {
+      switch appState {
+      case .idle:
         timer.stop()
         menu.reset()
         didShowAlmostOverAlert = false
+      case .running:
+        timer.run(forDuration: duration, block: handleTick(minutesLeft:))
+        menu.running(duration)
       }
     }
   }
@@ -75,12 +74,20 @@ class Application: NSObject {
       timeLeft = "< 1m"
     }
     
-    if (!didShowAlmostOverAlert && minutesLeft <= 3.0) {
+    if shouldShowAlmostOverAlert(minutesLeft: minutesLeft) {
       showAlmostOverAlert()
       didShowAlmostOverAlert = true
     }
     
     menu.tick(timeLeft: timeLeft)
+  }
+  
+  private func shouldShowAlmostOverAlert(minutesLeft: Double) -> Bool {
+    if didShowAlmostOverAlert {
+      return false
+    }
+    
+    return duration > 5 && minutesLeft <= 3.0
   }
   
   private func showAlmostOverAlert() {
