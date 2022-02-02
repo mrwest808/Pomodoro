@@ -1,6 +1,6 @@
 //
-//  FocusApp.swift
-//  Focus
+//  PomodoroApp.swift
+//  Pomodoro
 //
 //  Created by Johan West on 2022-01-25.
 //
@@ -9,7 +9,7 @@ import SwiftUI
 import Intents
 
 @main
-struct FocusApp: App {
+struct PomodoroApp: App {
   @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
   
   var body: some Scene {

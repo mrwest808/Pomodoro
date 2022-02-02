@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E3A027BA27A2FA1200CD3957 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A027B927A2FA1200CD3957 /* Menu.swift */; };
-		E3DFCA0827A0A3DE00502842 /* FocusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DFCA0727A0A3DE00502842 /* FocusApp.swift */; };
+		E3DFCA0827A0A3DE00502842 /* PomodoroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DFCA0727A0A3DE00502842 /* PomodoroApp.swift */; };
 		E3DFCA0C27A0A3DE00502842 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3DFCA0B27A0A3DE00502842 /* Assets.xcassets */; };
 		E3DFCA0F27A0A3DE00502842 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3DFCA0E27A0A3DE00502842 /* Preview Assets.xcassets */; };
 		E3DFCA1827A0A53F00502842 /* AppTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DFCA1727A0A53F00502842 /* AppTimer.swift */; };
@@ -18,11 +18,11 @@
 
 /* Begin PBXFileReference section */
 		E3A027B927A2FA1200CD3957 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
-		E3DFCA0427A0A3DE00502842 /* Focus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Focus.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3DFCA0727A0A3DE00502842 /* FocusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusApp.swift; sourceTree = "<group>"; };
+		E3DFCA0427A0A3DE00502842 /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3DFCA0727A0A3DE00502842 /* PomodoroApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroApp.swift; sourceTree = "<group>"; };
 		E3DFCA0B27A0A3DE00502842 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3DFCA0E27A0A3DE00502842 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		E3DFCA1027A0A3DE00502842 /* Focus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Focus.entitlements; sourceTree = "<group>"; };
+		E3DFCA1027A0A3DE00502842 /* Pomodoro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pomodoro.entitlements; sourceTree = "<group>"; };
 		E3DFCA1627A0A48700502842 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E3DFCA1727A0A53F00502842 /* AppTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTimer.swift; sourceTree = "<group>"; };
 		E3DFCA1927A0A66400502842 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
@@ -43,7 +43,7 @@
 		E3DFC9FB27A0A3DE00502842 = {
 			isa = PBXGroup;
 			children = (
-				E3DFCA0627A0A3DE00502842 /* Focus */,
+				E3DFCA0627A0A3DE00502842 /* Pomodoro */,
 				E3DFCA0527A0A3DE00502842 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,25 +51,25 @@
 		E3DFCA0527A0A3DE00502842 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E3DFCA0427A0A3DE00502842 /* Focus.app */,
+				E3DFCA0427A0A3DE00502842 /* Pomodoro.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E3DFCA0627A0A3DE00502842 /* Focus */ = {
+		E3DFCA0627A0A3DE00502842 /* Pomodoro */ = {
 			isa = PBXGroup;
 			children = (
 				E3DFCA1627A0A48700502842 /* Info.plist */,
-				E3DFCA0727A0A3DE00502842 /* FocusApp.swift */,
+				E3DFCA0727A0A3DE00502842 /* PomodoroApp.swift */,
 				E3DFCA1927A0A66400502842 /* Intents.intentdefinition */,
 				E3DFCA1B27A0A70B00502842 /* Application.swift */,
 				E3A027B927A2FA1200CD3957 /* Menu.swift */,
 				E3DFCA1727A0A53F00502842 /* AppTimer.swift */,
 				E3DFCA0B27A0A3DE00502842 /* Assets.xcassets */,
-				E3DFCA1027A0A3DE00502842 /* Focus.entitlements */,
+				E3DFCA1027A0A3DE00502842 /* Pomodoro.entitlements */,
 				E3DFCA0D27A0A3DE00502842 /* Preview Content */,
 			);
-			path = Focus;
+			path = Pomodoro;
 			sourceTree = "<group>";
 		};
 		E3DFCA0D27A0A3DE00502842 /* Preview Content */ = {
@@ -83,9 +83,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E3DFCA0327A0A3DE00502842 /* Focus */ = {
+		E3DFCA0327A0A3DE00502842 /* Pomodoro */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E3DFCA1327A0A3DE00502842 /* Build configuration list for PBXNativeTarget "Focus" */;
+			buildConfigurationList = E3DFCA1327A0A3DE00502842 /* Build configuration list for PBXNativeTarget "Pomodoro" */;
 			buildPhases = (
 				E3DFCA0027A0A3DE00502842 /* Sources */,
 				E3DFCA0127A0A3DE00502842 /* Frameworks */,
@@ -95,9 +95,9 @@
 			);
 			dependencies = (
 			);
-			name = Focus;
+			name = Pomodoro;
 			productName = Focus;
-			productReference = E3DFCA0427A0A3DE00502842 /* Focus.app */;
+			productReference = E3DFCA0427A0A3DE00502842 /* Pomodoro.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -115,7 +115,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E3DFC9FF27A0A3DE00502842 /* Build configuration list for PBXProject "Focus" */;
+			buildConfigurationList = E3DFC9FF27A0A3DE00502842 /* Build configuration list for PBXProject "Pomodoro" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -128,7 +128,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E3DFCA0327A0A3DE00502842 /* Focus */,
+				E3DFCA0327A0A3DE00502842 /* Pomodoro */,
 			);
 		};
 /* End PBXProject section */
@@ -152,7 +152,7 @@
 			files = (
 				E3DFCA1C27A0A70B00502842 /* Application.swift in Sources */,
 				E3DFCA1A27A0A66400502842 /* Intents.intentdefinition in Sources */,
-				E3DFCA0827A0A3DE00502842 /* FocusApp.swift in Sources */,
+				E3DFCA0827A0A3DE00502842 /* PomodoroApp.swift in Sources */,
 				E3DFCA1827A0A53F00502842 /* AppTimer.swift in Sources */,
 				E3A027BA27A2FA1200CD3957 /* Menu.swift in Sources */,
 			);
@@ -281,23 +281,24 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Focus/Focus.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Pomodoro/Pomodoro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Focus/Preview Content\"";
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_ASSET_PATHS = "\"Pomodoro/Preview Content\"";
 				DEVELOPMENT_TEAM = TNBLA3QJD3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Focus/Info.plist;
+				INFOPLIST_FILE = Pomodoro/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.viablelab.Focus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.viablelab.Pomodoro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -309,23 +310,24 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Focus/Focus.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Pomodoro/Pomodoro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Focus/Preview Content\"";
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_ASSET_PATHS = "\"Pomodoro/Preview Content\"";
 				DEVELOPMENT_TEAM = TNBLA3QJD3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Focus/Info.plist;
+				INFOPLIST_FILE = Pomodoro/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.viablelab.Focus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.viablelab.Pomodoro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -335,7 +337,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E3DFC9FF27A0A3DE00502842 /* Build configuration list for PBXProject "Focus" */ = {
+		E3DFC9FF27A0A3DE00502842 /* Build configuration list for PBXProject "Pomodoro" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E3DFCA1127A0A3DE00502842 /* Debug */,
@@ -344,7 +346,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E3DFCA1327A0A3DE00502842 /* Build configuration list for PBXNativeTarget "Focus" */ = {
+		E3DFCA1327A0A3DE00502842 /* Build configuration list for PBXNativeTarget "Pomodoro" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E3DFCA1427A0A3DE00502842 /* Debug */,
