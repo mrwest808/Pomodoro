@@ -28,7 +28,7 @@ private final class AppDelegate: NSObject, NSApplicationDelegate {
   }
   
   func application(_ application: NSApplication, handlerFor intent: INIntent) -> Any? {
-    if intent is StartTimerIntent, app != nil {
+    if intent is StartTimerIntent || intent is StopTimerIntent, app != nil {
       return app
     }
     return nil

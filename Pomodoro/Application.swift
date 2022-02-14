@@ -142,5 +142,17 @@ extension Application: StartTimerIntentHandling {
     let response = StartTimerIntentResponse(code: .success, userActivity: nil)
     completion(response)
   }
-  
+}
+
+extension Application: StopTimerIntentHandling {
+  func handle(intent: StopTimerIntent, completion: @escaping (StopTimerIntentResponse) -> Void) {
+    print("Handle StopTimerIntent: \(appState)")
+    
+    if appState == .running {
+      appState = .idle
+    }
+    
+    let response = StopTimerIntentResponse(code: .success, userActivity: nil)
+    completion(response)
+  }
 }

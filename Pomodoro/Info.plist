@@ -5,12 +5,14 @@
 	<key>INIntentsSupported</key>
 	<array>
 		<string>StartTimerIntent</string>
+		<string>StopTimerIntent</string>
 	</array>
 	<key>LSUIElement</key>
 	<true/>
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>StartTimerIntent</string>
+		<string>StopTimerIntent</string>
 	</array>
 </dict>
 </plist>
