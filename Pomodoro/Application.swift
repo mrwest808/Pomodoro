@@ -146,8 +146,6 @@ extension Application: StartTimerIntentHandling {
 
 extension Application: StopTimerIntentHandling {
   func handle(intent: StopTimerIntent, completion: @escaping (StopTimerIntentResponse) -> Void) {
-    print("Handle StopTimerIntent: \(appState)")
-    
     if appState == .running {
       appState = .idle
     }
